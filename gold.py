@@ -1,22 +1,36 @@
-# LinearRegression is a machine learning library for linear regression
-from sklearn.linear_model import LinearRegression
-# pandas and numpy are used for data manipulation
-import pandas as pd
-import numpy as np
-# matplotlib and seaborn are used for plotting graphs
-import matplotlib.pyplot as plt
-import seaborn
-# fix_yahoo_finance is used to fetch data
-import yfinance as yf
+#include <iostream>
+using namespace std;
+int main()
+{
+    int year ,month ;
+    double oil , gold , dollar, the_gram;
 
-# Read data
-Df = yf.download('GLD','2020-01-01','2021-12-31')
-# Only keep close columns
-Df=Df[['Close']]
-# Drop rows with missing values
-Df= Df.dropna()
-# Plot the closing price of GLD
-Df.Close.plot(figsize=(10,5))
-plt.title("Balqa Applied University - Jordan")
-plt.ylabel("Gold Prices 2010-2020")
-plt.show()
+   cout<<"Enter the current  year : ";
+   cin>>year;
+   if (year==2020)
+   {
+        cout<<"Enter the current  month : ";
+   cin>>month;
+    if (month<5)
+        cout<<"ERROR   " ;
+        else
+            if (month>=5&&month<=12 ){
+            cout<<"please enter the oil price : ";
+cin>>oil;
+cout<<"please enter the dollar price : ";
+cin>>dollar;
+cout<<"enter the gram of the gold that you want to buy is it 18gm ,21gm ,24gm : ";
+cin>>the_gram;}
+if (the_gram==18){
+     gold=((oil*dollar)+10)+24/the_gram;
+}else  if (the_gram==21){
+    gold=((oil*dollar)+15)+24/the_gram;
+}else if (the_gram==24){
+ gold=((oil*dollar)+20)+24/the_gram;
+}
+cout<<"the price one gram of gold is :"<<gold;}
+
+else
+    cout<<"ERROR";
+ return 0;
+}
